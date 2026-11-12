@@ -1,0 +1,161 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>
+  @layer base {
+    html, body { margin: 0; padding: 0; }
+    body { overscroll-behavior: none; }
+    main > :first-child { margin-top: 0 !important; }
+    main > :last-child { margin-bottom: 0 !important; }
+  }
+  ::-webkit-scrollbar { display: none; }
+
+  /* Fully bidirectional global theme transition active at all times */
+  html, body, header, main, footer, section, div, a, button, span, p, h1, h2, h3, svg, path {
+    transition-property: background-color, color, border-color, box-shadow, stroke, fill;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* View transition circular ripple effect: fully symmetrical and bidirectional */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+  ::view-transition-old(root) {
+    z-index: 1;
+  }
+  ::view-transition-new(root) {
+    z-index: 9999;
+  }
+
+  /* Smooth bidirectional icon transitions */
+  .theme-icon-light {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .dark .theme-icon-light {
+    transform: rotate(-90deg) scale(0);
+    opacity: 0;
+  }
+
+  .theme-icon-dark {
+    transform: rotate(90deg) scale(0);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .dark .theme-icon-dark {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-background":"#e0e3e8","surface-dim":"#101418","secondary-fixed-dim":"#6ddc9e","surface-panel":"#14171A","text-primary":"#F1F3F5","surface-raised":"#1C2024","inverse-on-surface":"#2d3135","tertiary-fixed":"#ffdad3","secondary":"#6ddc9e","on-secondary-fixed":"#002111","surface-container-low":"#181c20","text-muted":"#606770","error":"#ffb4ab","on-error-container":"#ffdad6","on-primary":"#002681","surface":"#101418","on-tertiary-fixed-variant":"#8d1700","on-secondary-container":"#00311b","primary-fixed-dim":"#b7c4ff","tertiary":"#ffb4a4","accent-focus":"#3E63DD","on-primary-fixed-variant":"#0039b4","background":"#101418","on-surface-variant":"#c4c5d6","on-secondary-fixed-variant":"#005231","inverse-primary":"#2c54ce","surface-bright":"#363a3e","on-surface":"#e0e3e8","surface-tint":"#b7c4ff","secondary-container":"#30a46c","on-tertiary-container":"#ffece8","status-alert":"#E54D2E","surface-container-high":"#262a2f","on-secondary":"#003920","text-secondary":"#8D94A0","inverse-surface":"#e0e3e8","primary-fixed":"#dce1ff","surface-container-highest":"#313539","on-primary-fixed":"#001551","primary":"#b7c4ff","primary-container":"#3e63dd","tertiary-fixed-dim":"#ffb4a4","surface-container":"#1c2024","surface-border":"#2B3036","surface-base":"#0E1013","outline":"#8e909f","on-tertiary-fixed":"#3e0500","outline-variant":"#444654","surface-variant":"#313539","surface-container-lowest":"#0b0f12","on-primary-container":"#eeeeff","on-error":"#690005","tertiary-container":"#c8381b","on-tertiary":"#640d00","status-active":"#30A46C","secondary-fixed":"#8af8b9","error-container":"#93000a"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"1rem","margin-tablet":"2rem","margin":"1.25rem","space-sm":"0.5rem","space-2xl":"4rem","gutter-desktop":"1.5rem","margin-desktop":"3rem","space-xs":"0.25rem","gutter":"1.25rem","space-xl":"2.5rem","space-lg":"1.5rem"},"fontFamily":{"headline-xl-mobile":["Inter"],"body-lg":["JetBrains Mono"],"headline-lg":["Inter"],"body-sm":["JetBrains Mono"],"code":["JetBrains Mono"],"body-md":["JetBrains Mono"],"label-md":["JetBrains Mono"],"headline-md":["Inter"],"headline-sm":["Inter"],"headline-lg-mobile":["Inter"],"headline-xl":["Inter"],"label-sm":["JetBrains Mono"]},"fontSize":{"headline-xl-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["15px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"code":["13px",{"lineHeight":"20px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"500"}],"headline-lg-mobile":["22px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}]}}}}</script></head><body class="bg-[#FAF7F2] dark:bg-surface font-body-md text-[#2C241E] dark:text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-[#FAF7F2]/90 dark:bg-surface/85 backdrop-blur-md shadow-[0_1px_8px_rgba(44,36,30,0.05)] dark:shadow-[0_1px_8px_rgba(0,0,0,0.25)] border-b border-[#E8E2D8] dark:border-transparent"><div class="h-16 max-w-[960px] mx-auto px-margin md:px-gutter-desktop flex items-center justify-between"><a class="font-code text-body-md text-[#231E18] dark:text-text-primary hover:text-blue-600 dark:hover:text-primary transition-colors tracking-tight flex items-center gap-1.5" href="#"><span class="text-blue-600 dark:text-primary font-bold">&gt;</span><span class="">kavan.it</span></a><nav class="flex items-center gap-space-md sm:gap-space-lg font-code text-body-sm"><button aria-label="Toggle light and dark theme" class="relative w-9 h-9 rounded-lg border border-[#E3DCD2] dark:border-surface-container bg-[#F0ECE1] hover:bg-[#E7E1D4] dark:bg-surface-panel dark:hover:bg-surface-raised text-[#3D352E] dark:text-text-primary flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary/60 transform hover:scale-105 active:scale-95 transition-transform duration-200 cursor-pointer overflow-hidden shadow-xs" id="theme-toggle" type="button"><span class="material-symbols-outlined text-[19px] absolute text-amber-700 theme-icon-light" id="icon-light">dark_mode</span><span class="material-symbols-outlined text-[19px] absolute text-primary theme-icon-dark" id="icon-dark">light_mode</span></button></nav></div></header><main class="w-full pt-16 bg-[#FAF7F2] dark:bg-surface min-h-[calc(100vh-140px)]"><div class="max-w-[960px] mx-auto px-margin md:px-gutter-desktop py-space-2xl space-y-space-2xl"><section class="space-y-space-lg pt-space-md"><div class="space-y-space-xs"><h1 class="font-headline-xl text-headline-xl text-[#231E18] dark:text-text-primary font-bold tracking-tight">Kavan T.</h1><p class="font-code text-headline-sm text-blue-600 dark:text-primary">DevOps Engineer &amp; Python Specialist</p></div><p class="font-body-lg text-body-lg text-[#554C43] dark:text-on-surface-variant max-w-2xl leading-relaxed">I'm Kavan, a <span id="age" class="">27</span> years old developper based in France with a specialty in <span class="text-[#231E18] dark:text-text-primary font-medium">Python</span>, <span class="text-[#231E18] dark:text-text-primary font-medium">Docker</span>, and everything related to <span class="text-[#231E18] dark:text-text-primary font-medium">Devops</span>.</p><div class="flex items-center gap-space-md pt-space-sm"><div class="relative inline-block"><button id="cv-btn" aria-haspopup="dialog" aria-expanded="false" class="inline-flex items-center gap-space-xs px-2.5 py-1.5 rounded border border-[#E3DCD2] dark:border-surface-container bg-[#FFFDF9] hover:bg-[#F2EDE2] dark:bg-surface-panel dark:hover:bg-surface-raised text-[#231E18] dark:text-text-primary shadow-sm dark:shadow-none font-code text-body-sm transition-all duration-200 cursor-pointer group active:scale-95"><span class="material-symbols-outlined text-[16px] text-blue-600 dark:text-primary transition-transform group-hover:-translate-y-0.5">download</span><span class="font-medium">Curriculum Vit</span><span class="material-symbols-outlined text-[14px] text-[#877C6F] dark:text-text-muted transition-transform group-hover:translate-y-0.5">expand_more</span></button><div id="cv-modal-backdrop" class="fixed inset-0 z-50 bg-black/40 dark:bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 transition-opacity duration-200 hidden opacity-0" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title"><div id="cv-modal-card" class="w-full max-w-sm rounded-xl border border-[#E3DCD2] dark:border-surface-container bg-[#FAF7F2] dark:bg-surface-panel p-space-md shadow-lg transition-transform duration-200 scale-95 space-y-space-md"><div class="flex items-center justify-between border-b border-[#E8E2D8] dark:border-surface-container/50 pb-space-xs"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-blue-600 dark:text-primary">description</span><h3 id="cv-modal-title" class="font-code text-body-md font-medium text-[#231E18] dark:text-text-primary">Download CV</h3></div><button id="cv-modal-close" type="button" aria-label="Close modal" class="w-7 h-7 rounded border border-[#E3DCD2] dark:border-surface-container/60 bg-[#F0ECE1] hover:bg-[#E7E1D4] dark:bg-surface-container dark:hover:bg-surface-raised flex items-center justify-center text-[#73685C] hover:text-[#231E18] dark:text-text-muted dark:hover:text-text-primary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px]">close</span></button></div><p class="font-body-sm text-body-sm text-[#61564C] dark:text-text-secondary">Select language version / Choisissez la version :</p><div class="flex flex-col gap-2 font-code text-body-sm"><a href="/cv-en.pdf" download="Kavan_CV_EN.pdf" class="flex items-center justify-between p-2.5 rounded-lg border border-[#E8E2D8] hover:border-[#D6CCC0] dark:border-surface-container/50 dark:hover:border-surface-container bg-[#FFFDF9] hover:bg-[#F7F2E7] dark:bg-surface-container/30 dark:hover:bg-surface-container/70 transition-all text-[#231E18] dark:text-text-primary group"><div class="flex items-center gap-2"><span class="px-1.5 py-0.5 rounded bg-blue-600/10 dark:bg-primary/10 text-blue-600 dark:text-primary text-[11px] font-bold tracking-wider">EN</span><span class="font-medium">English (US/UK)</span></div><span class="material-symbols-outlined text-[16px] text-blue-600 dark:text-primary transition-transform group-hover:translate-x-0.5">download</span></a><a href="/cv-fr.pdf" download="Kavan_CV_FR.pdf" class="flex items-center justify-between p-2.5 rounded-lg border border-[#E8E2D8] hover:border-[#D6CCC0] dark:border-surface-container/50 dark:hover:border-surface-container bg-[#FFFDF9] hover:bg-[#F7F2E7] dark:bg-surface-container/30 dark:hover:bg-surface-container/70 transition-all text-[#231E18] dark:text-text-primary group"><div class="flex items-center gap-2"><span class="px-1.5 py-0.5 rounded bg-[#EDE7DB] dark:bg-surface-container/60 text-[#61564C] dark:text-text-secondary text-[11px] font-bold tracking-wider">FR</span><span class="font-medium">Français</span></div><span class="material-symbols-outlined text-[16px] text-[#73685C] dark:text-text-secondary group-hover:text-blue-600 dark:group-hover:text-primary transition-all group-hover:translate-x-0.5">download</span></a></div></div></div></div><a class="font-code text-body-sm text-[#73685C] dark:text-text-secondary hover:text-[#231E18] dark:hover:text-text-primary transition-colors flex items-center gap-1" href="mailto:contact@kavan.it"><span class="">contact@kavan.it</span><span class="material-symbols-outlined text-[14px]">arrow_outward</span></a></div></section><section class="space-y-space-lg" id="services"><div class="flex items-baseline justify-between border-b border-[#E8E2D8] dark:border-surface-container/50 pb-space-sm"><h2 class="font-code text-headline-sm text-[#231E18] dark:text-text-primary tracking-tight"><span class="text-blue-600 dark:text-primary font-bold mr-1">&gt;</span>Services</h2><span class="font-code text-label-sm text-[#877C6F] dark:text-text-muted">Self-hosted &amp; operational</span></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md"><a class="group p-space-md rounded-xl bg-[#FFFDF9] hover:bg-[#F7F2E7] dark:bg-surface-panel/60 dark:hover:bg-surface-panel border border-[#E8E2D8] dark:border-surface-container/40 hover:border-[#D6CCC0] dark:hover:border-surface-container transition-all flex flex-col justify-between space-y-space-sm shadow-sm dark:shadow-none hover:shadow" href="https://browser.kavan.it" rel="noreferrer" target="_blank"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="font-code text-body-md text-[#231E18] group-hover:text-blue-600 dark:text-text-primary dark:group-hover:text-primary transition-colors font-medium">Browser</span><span class="w-1.5 h-1.5 rounded-full bg-status-active"></span></div><span class="material-symbols-outlined text-[16px] text-[#A69B8E] group-hover:text-[#231E18] dark:text-text-muted dark:group-hover:text-text-primary transition-colors">arrow_outward</span></div><p class="font-body-sm text-body-sm text-[#61564C] dark:text-text-secondary leading-relaxed">Clean web navigation &amp; isolated sandboxed browsing environment.</p><span class="font-code text-label-sm text-[#877C6F] dark:text-text-muted">browser.kavan.it</span></a><a class="group p-space-md rounded-xl bg-[#FFFDF9] hover:bg-[#F7F2E7] dark:bg-surface-panel/60 dark:hover:bg-surface-panel border border-[#E8E2D8] dark:border-surface-container/40 hover:border-[#D6CCC0] dark:hover:border-surface-container transition-all flex flex-col justify-between space-y-space-sm shadow-sm dark:shadow-none hover:shadow" href="https://cloud.kavan.it" rel="noreferrer" target="_blank"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="font-code text-body-md text-[#231E18] group-hover:text-blue-600 dark:text-text-primary dark:group-hover:text-primary transition-colors font-medium">Cloud</span><span class="w-1.5 h-1.5 rounded-full bg-status-active"></span></div><span class="material-symbols-outlined text-[16px] text-[#A69B8E] group-hover:text-[#231E18] dark:text-text-muted dark:group-hover:text-text-primary transition-colors">arrow_outward</span></div><p class="font-body-sm text-body-sm text-[#61564C] dark:text-text-secondary leading-relaxed">Personal cloud storage, real-time sync &amp; persistent infrastructure assets.</p><span class="font-code text-label-sm text-[#877C6F] dark:text-text-muted">cloud.kavan.it</span></a><a class="group p-space-md rounded-xl bg-[#FFFDF9] hover:bg-[#F7F2E7] dark:bg-surface-panel/60 dark:hover:bg-surface-panel border border-[#E8E2D8] dark:border-surface-container/40 hover:border-[#D6CCC0] dark:hover:border-surface-container transition-all flex flex-col justify-between space-y-space-sm shadow-sm dark:shadow-none hover:shadow" href="https://passwords.kavan.it" rel="noreferrer" target="_blank"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="font-code text-body-md text-[#231E18] group-hover:text-blue-600 dark:text-text-primary dark:group-hover:text-primary transition-colors font-medium">Passwords</span><span class="w-1.5 h-1.5 rounded-full bg-status-active"></span></div><span class="material-symbols-outlined text-[16px] text-[#A69B8E] group-hover:text-[#231E18] dark:text-text-muted dark:group-hover:text-text-primary transition-colors">arrow_outward</span></div><p class="font-body-sm text-body-sm text-[#61564C] dark:text-text-secondary leading-relaxed">Zero-knowledge password vault &amp; encrypted identity authority.</p><span class="font-code text-label-sm text-[#877C6F] dark:text-text-muted">passwords.kavan.it</span></a><a class="group p-space-md rounded-xl bg-[#FFFDF9] hover:bg-[#F7F2E7] dark:bg-surface-panel/60 dark:hover:bg-surface-panel border border-[#E8E2D8] dark:border-surface-container/40 hover:border-[#D6CCC0] dark:hover:border-surface-container transition-all flex flex-col justify-between space-y-space-sm shadow-sm dark:shadow-none hover:shadow" href="https://tools.kavan.it" rel="noreferrer" target="_blank"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="font-code text-body-md text-[#231E18] group-hover:text-blue-600 dark:text-text-primary dark:group-hover:text-primary transition-colors font-medium">Tools</span><span class="w-1.5 h-1.5 rounded-full bg-status-active"></span></div><span class="material-symbols-outlined text-[16px] text-[#A69B8E] group-hover:text-[#231E18] dark:text-text-muted dark:group-hover:text-text-primary transition-colors">arrow_outward</span></div><p class="font-body-sm text-body-sm text-[#61564C] dark:text-text-secondary leading-relaxed">DevOps utilities, payload encoders, formatters &amp; debug console.</p><span class="font-code text-label-sm text-[#877C6F] dark:text-text-muted">tools.kavan.it</span></a><a class="group p-space-md rounded-xl bg-[#FFFDF9] hover:bg-[#F7F2E7] dark:bg-surface-panel/60 dark:hover:bg-surface-panel border border-[#E8E2D8] dark:border-surface-container/40 hover:border-[#D6CCC0] dark:hover:border-surface-container transition-all flex flex-col justify-between space-y-space-sm shadow-sm dark:shadow-none hover:shadow" href="https://stream.kavan.it" rel="noreferrer" target="_blank"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="font-code text-body-md text-[#231E18] group-hover:text-blue-600 dark:text-text-primary dark:group-hover:text-primary transition-colors font-medium">Streaming</span><span class="w-1.5 h-1.5 rounded-full bg-status-active"></span></div><span class="material-symbols-outlined text-[16px] text-[#A69B8E] group-hover:text-[#231E18] dark:text-text-muted dark:group-hover:text-text-primary transition-colors">arrow_outward</span></div><p class="font-body-sm text-body-sm text-[#61564C] dark:text-text-secondary leading-relaxed">High-definition media library &amp; private streaming server.</p><span class="font-code text-label-sm text-[#877C6F] dark:text-text-muted">stream.kavan.it</span></a></div></section><section class="space-y-space-lg" id="cv-section"><div class="flex items-baseline justify-between border-b border-[#E8E2D8] dark:border-surface-container/50 pb-space-sm"><h2 class="font-code text-headline-sm text-[#231E18] dark:text-text-primary tracking-tight"><span class="text-blue-600 dark:text-primary font-bold mr-1">&gt;</span>Experience</h2><span class="font-code text-label-sm text-[#877C6F] dark:text-text-muted">4+ Years Systems &amp; Dev</span></div><div class="space-y-space-xl"><div class="space-y-space-xs"><div class="flex flex-wrap items-baseline justify-between gap-space-xs"><h3 class="font-headline-sm text-headline-sm text-[#231E18] dark:text-text-primary font-medium">DevOps &amp; Automation Engineer</h3><span class="font-code text-body-sm text-[#877C6F] dark:text-text-muted">2022 — PRESENT</span></div><p class="font-code text-body-sm text-blue-600 dark:text-primary">Independent &amp; Infrastructure Projects</p><p class="font-body-md text-body-md text-[#554C43] dark:text-on-surface-variant leading-relaxed pt-1">Architecting, deploying, and maintaining high-availability personal and client microservices. Custom container setups with Docker Compose, automated CD pipelines, reverse proxy configurations with hardened TLS.</p><div class="flex flex-wrap gap-space-xs pt-space-xs font-code text-body-sm text-[#61564C] dark:text-text-secondary"><span class="px-2 py-0.5 rounded bg-[#EDE7DB] dark:bg-surface-container/40">Docker</span><span class="px-2 py-0.5 rounded bg-[#EDE7DB] dark:bg-surface-container/40">CI/CD</span><span class="px-2 py-0.5 rounded bg-[#EDE7DB] dark:bg-surface-container/40">Nginx / Traefik</span><span class="px-2 py-0.5 rounded bg-[#EDE7DB] dark:bg-surface-container/40">Debian / Ubuntu</span></div></div><div class="space-y-space-xs"><div class="flex flex-wrap items-baseline justify-between gap-space-xs"><h3 class="font-headline-sm text-headline-sm text-[#231E18] dark:text-text-primary font-medium">Python Backend Developer</h3><span class="font-code text-body-sm text-[#877C6F] dark:text-text-muted">2020 — 2022</span></div><p class="font-code text-body-sm text-blue-600 dark:text-primary">Software Architecture &amp; Scripting</p><p class="font-body-md text-body-md text-[#554C43] dark:text-on-surface-variant leading-relaxed pt-1">Constructed high-throughput API endpoints, automation scripts, and scraping engines. Implemented background workers and Redis caching layers to reduce latency by over 40%.</p><div class="flex flex-wrap gap-space-xs pt-space-xs font-code text-body-sm text-[#61564C] dark:text-text-secondary"><span class="px-2 py-0.5 rounded bg-[#EDE7DB] dark:bg-surface-container/40">Python 3.x</span><span class="px-2 py-0.5 rounded bg-[#EDE7DB] dark:bg-surface-container/40">Redis</span><span class="px-2 py-0.5 rounded bg-[#EDE7DB] dark:bg-surface-container/40">SQL</span><span class="px-2 py-0.5 rounded bg-[#EDE7DB] dark:bg-surface-container/40">Automation Scripts</span></div></div></div></section></div></main><footer class="w-full bg-[#F3EFE6] dark:bg-surface-panel py-space-xl border-t border-[#E8E2D8] dark:border-transparent shadow-[0_-1px_8px_rgba(44,36,30,0.03)] dark:shadow-[0_-1px_8px_rgba(0,0,0,0.15)]"><div class="max-w-[960px] mx-auto px-margin md:px-gutter-desktop flex flex-col sm:flex-row items-center justify-between gap-space-sm font-code text-body-sm text-[#877C6F] dark:text-text-muted"><div class="">Coded with ❤️ and ☕ by Kavan</div><div class="flex items-center gap-space-md"><a class="hover:text-[#231E18] dark:hover:text-text-primary transition-colors flex items-center gap-1" href="https://github.com/ItsKezzer" rel="noreferrer" target="_blank"><span class="">github: ItsKezzer</span><span class="material-symbols-outlined text-[13px]">open_in_new</span></a><a class="hover:text-[#231E18] dark:hover:text-text-primary transition-colors flex items-center gap-1" href="https://linkedin.com/in/kavan-t" rel="noreferrer" target="_blank"><span class="">linkedin: kavan-t</span><span class="material-symbols-outlined text-[13px]">open_in_new</span></a></div></div></footer><script>
+  function calculateAge(birthDate) {
+    const today = new Date();
+    const birth = new Date(birthDate);
+    let age = today.getFullYear() - birth.getFullYear();
+    const m = today.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+      age--;
+    }
+    return age;
+  }
+  const ageEl = document.getElementById('age');
+  if (ageEl) ageEl.textContent = calculateAge('1999-08-10');
+
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const toggle = () => {
+        document.documentElement.classList.toggle('dark');
+      };
+
+      if (document.startViewTransition) {
+        const rect = themeToggle.getBoundingClientRect();
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+        const maxRadius = Math.hypot(
+          Math.max(x, window.innerWidth - x),
+          Math.max(y, window.innerHeight - y)
+        );
+
+        const transition = document.startViewTransition(() => {
+          toggle();
+        });
+
+        transition.ready.then(() => {
+          document.documentElement.animate(
+            {
+              clipPath: [
+                `circle(0px at ${x}px ${y}px)`,
+                `circle(${maxRadius}px at ${x}px ${y}px)`
+              ]
+            },
+            {
+              duration: 450,
+              easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+              pseudoElement: '::view-transition-new(root)'
+            }
+          );
+        });
+      } else {
+        toggle();
+      }
+    });
+  }
+</script>
+
+
+<script class="">
+  (function setupCvModal() {
+    const cvBtn = document.getElementById('cv-btn');
+    const modal = document.getElementById('cv-modal-backdrop');
+    const modalContent = document.getElementById('cv-modal-card');
+    const closeBtn = document.getElementById('cv-modal-close');
+    if (!cvBtn || !modal || !closeBtn) return;
+
+    const openModal = () => {
+      modal.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        modal.classList.remove('opacity-0');
+        if (modalContent) {
+          modalContent.classList.remove('scale-95');
+          modalContent.classList.add('scale-100');
+        }
+      });
+      cvBtn.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeModal = () => {
+      modal.classList.add('opacity-0');
+      if (modalContent) {
+        modalContent.classList.remove('scale-100');
+        modalContent.classList.add('scale-95');
+      }
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        cvBtn.setAttribute('aria-expanded', 'false');
+      }, 200);
+    };
+
+    cvBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openModal();
+    });
+
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeModal();
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  })();
+</script></body></html>

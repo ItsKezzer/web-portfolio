@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="315 158 552 552" width="1152" height="1152">
+  <style>
+    .ink { fill: #F1F3F5; }
+    .line { stroke: #F1F3F5; fill: none; }
+    .background { fill: #101418; }
+  </style>
+  <!-- k stem -->
+  <rect class="ink" x="347" y="178" width="109" height="493"/>
+  <!-- k upper arm -->
+  <polygon class="ink" points="452,418 560,284 696,285 545,448 452,458"/>
+  <!-- k leg -->
+  <polygon class="ink" points="452,448 545,448 707,671 582,671 477,524 452,548"/>
+  <!-- pipeline line through the k -->
+  <path class="line" d="M331 457 H842" stroke-width="18" stroke-linecap="butt"/>
+  <!-- pipeline node -->
+  <circle class="ink" cx="669" cy="457" r="37"/>
+  <circle class="background" cx="669" cy="457" r="19"/>
+  <!-- arrow chevron -->
+  <path class="line" d="M767 385 L842 457 L767 531" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

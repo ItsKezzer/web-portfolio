@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-surface: #101418;
+  --color-surface-dim: #101418;
+  --color-surface-bright: #363a3e;
+  --color-surface-container-lowest: #0b0f12;
+  --color-surface-container-low: #181c20;
+  --color-surface-container: #1c2024;
+  --color-surface-container-high: #262a2f;
+  --color-surface-container-highest: #313539;
+  --color-surface-panel: #14171A;
+  --color-surface-raised: #1C2024;
+  --color-surface-border: #2B3036;
+  --color-surface-base: #0E1013;
+  --color-surface-variant: #313539;
+  --color-surface-tint: #b7c4ff;
+
+  --color-on-surface: #e0e3e8;
+  --color-on-surface-variant: #c4c5d6;
+  --color-text-primary: #F1F3F5;
+  --color-text-secondary: #8D94A0;
+  --color-text-muted: #606770;
+
+  --color-primary: #b7c4ff;
+  --color-primary-container: #3e63dd;
+  --color-on-primary: #002681;
+  --color-on-primary-container: #eeeeff;
+  --color-accent-focus: #3E63DD;
+
+  --color-secondary: #6ddc9e;
+  --color-secondary-container: #30a46c;
+  --color-on-secondary: #003920;
+  --color-status-active: #30A46C;
+  --color-status-alert: #E54D2E;
+
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-space-2xl: 4rem;
+  --spacing-gutter: 1.25rem;
+  --spacing-gutter-desktop: 1.5rem;
+  --spacing-margin: 1.25rem;
+  --spacing-margin-tablet: 2rem;
+  --spacing-margin-desktop: 3rem;
+
+  --font-headline-xl: Inter, system-ui, sans-serif;
+  --font-headline-lg: Inter, system-ui, sans-serif;
+  --font-headline-md: Inter, system-ui, sans-serif;
+  --font-headline-sm: Inter, system-ui, sans-serif;
+  --font-body-lg: "JetBrains Mono", monospace;
+  --font-body-md: "JetBrains Mono", monospace;
+  --font-body-sm: "JetBrains Mono", monospace;
+  --font-code: "JetBrains Mono", monospace;
+  --font-label-md: "JetBrains Mono", monospace;
+  --font-label-sm: "JetBrains Mono", monospace;
+
+  --text-headline-xl: 40px;
+  --text-headline-xl--line-height: 48px;
+  --text-headline-xl--letter-spacing: -0.02em;
+
+  --text-headline-lg: 28px;
+  --text-headline-lg--line-height: 36px;
+  --text-headline-lg--letter-spacing: -0.015em;
+
+  --text-headline-md: 20px;
+  --text-headline-md--line-height: 28px;
+  --text-headline-md--letter-spacing: -0.01em;
+
+  --text-headline-sm: 16px;
+  --text-headline-sm--line-height: 24px;
+
+  --text-body-lg: 15px;
+  --text-body-lg--line-height: 24px;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 22px;
+
+  --text-body-sm: 12px;
+  --text-body-sm--line-height: 18px;
+
+  --text-label-md: 13px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.02em;
+
+  --text-label-sm: 11px;
+  --text-label-sm--line-height: 14px;
+  --text-label-sm--letter-spacing: 0.04em;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Bidirectional global theme transition */
+html, body, header, main, footer, section, div, a, button, span, p, h1, h2, h3, svg, path {
+  transition-property: background-color, color, border-color, box-shadow, stroke, fill;
+  transition-duration: 0.35s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Circular ripple view transition */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* Theme toggle icon animations */
+.theme-icon-light {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dark .theme-icon-light {
+  transform: rotate(-90deg) scale(0);
+  opacity: 0;
+}
+
+.theme-icon-dark {
+  transform: rotate(90deg) scale(0);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dark .theme-icon-dark {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
