@@ -6,13 +6,8 @@ services:
     image: kavan-it-portfolio:latest
     container_name: kavan_portfolio
     restart: unless-stopped
+    user: "101:101"
     ports:
-      - "8080:80"
+      - "8080:8080"
     environment:
       - NODE_ENV=production
-    # Example labels for Traefik reverse-proxy setups:
-    # labels:
-    #   - "traefik.enable=true"
-    #   - "traefik.http.routers.portfolio.rule=Host(`kavan.it`)"
-    #   - "traefik.http.routers.portfolio.entrypoints=websecure"
-    #   - "traefik.http.routers.portfolio.tls.certresolver=letsencrypt"
